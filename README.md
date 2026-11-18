@@ -27,8 +27,6 @@ XGBoost et Random Forest dominent. XGBoost sur données brutes et XGBoost sur do
 
 À l'inverse, l'ACP fait baisser les performances de tous les modèles, et le perceptron multicouche, sensible à l'échelle des variables, change de score selon la recette. Les KNN sont à égalité avec et sans normalisation parce que le package `kknn` normalise déjà les variables par défaut.
 
-![Matrice de confusion du modèle final sur l'échantillon test](figures/matrice_confusion.png)
-
 *Matrice de confusion du modèle final sur l'échantillon test.*
 
 ![Courbe ROC sur l'échantillon test (AUC = 0,984)](figures/courbe_roc.png)
