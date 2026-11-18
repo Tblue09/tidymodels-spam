@@ -1,10 +1,29 @@
 # Pipelines de machine learning reproductibles avec tidymodels
 
 Ce dépôt présente l'écosystème **tidymodels**, un ensemble de packages R qui permet de construire des workflows reproductibles, du prétraitement des données jusqu'à l'évaluation des modèles. Il est appliqué au jeu de données spam (environ 4 000 e-mails, 57 variables).
+ 
+## Pourquoi tidymodels
+ 
+En R, un projet de machine learning peut s'écrire de plusieurs façons. Les scripts ad hoc combinent des packages spécialisés, chacun avec sa syntaxe : ils sont flexibles, mais difficiles à relire, à comparer et à reproduire, et les étapes de prétraitement, d'entraînement et de validation finissent souvent mélangées. `caret` puis `mlr3` ont proposé des cadres intégrés autour d'une fonction ou d'objets centraux. tidymodels, construit sur la philosophie du tidyverse, sépare explicitement chaque étape de la modélisation dans un package dédié.
+ 
+## Les packages de l'écosystème
+ 
+| Package | Rôle |
+|---|---|
+| `rsample` | découpage apprentissage / test et rééchantillonnage (validation croisée) |
+| `recipes` | prétraitement : rôles des variables, transformations, étapes sautées sur le test (`skip = TRUE`), étapes personnalisées |
+| `parsnip` | spécification des modèles : interface unique quel que soit le moteur, noms d'hyperparamètres harmonisés, spécification séparée de l'estimation |
+| `workflows` | regroupement d'une recette et d'un modèle en un seul objet |
+| `workflowsets` | croisement de plusieurs recettes et plusieurs modèles |
+| `tune` | optimisation des hyperparamètres par validation croisée, puis évaluation finale avec `last_fit()` |
+| `yardstick` | métriques de performance (AUC, accuracy, score de Brier…) |
+ 
+Le prétraitement est appris sur l'échantillon d'apprentissage puis appliqué tel quel aux autres données, ce qui évite les fuites d'information entre apprentissage et validation.
+ 
 
 ## Démarche
 
-4 recettes de prétraitement sont croisées avec 4 modèles dans un seul `workflow_set`, soit 16 pipelines :
+4 stratégies de prétraitement sont croisées avec 4 modèles dans un seul `workflow_set`, soit 16 pipelines :
 
 | Recettes | Modèles |
 |---|---|
