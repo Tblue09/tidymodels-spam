@@ -1,7 +1,5 @@
 # Pipelines de machine learning reproductibles avec tidymodels
 
-Projet réalisé dans le cadre du Master MSID (Université de Pau et des Pays de l'Adour).
-
 Ce dépôt présente l'écosystème **tidymodels**, un ensemble de packages R qui permet de construire des workflows reproductibles, du prétraitement des données jusqu'à l'évaluation des modèles. Il est appliqué au jeu de données spam (environ 4 000 e-mails, 57 variables).
 
 ## Démarche
